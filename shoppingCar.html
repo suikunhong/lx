@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" href="css/reset.css">
+		<style>
+			body{
+				font-size:0.16rem;
+				background: #F7F7F7;
+			}
+			.product-item{
+				width:100%;
+				background: #fff;
+				border-radius: 0.15rem;
+				margin:0.15rem 0;
+				display:flex;
+				justify-content: space-around;
+			}
+			.check label p,footer label p{
+				width:40px;
+				height: 40px;
+				border-radius: 50%;
+				overflow: hidden;
+				background-image:url(img/cart-sprite.png);
+				border:1px solid black;
+				background-position:-999px -999px;
+				transform:scale(0.5);
+				background-repeat:no-repeat;
+			}
+			.check label input,footer label input{
+				visibility: hidden;
+				position: absolute;
+			}
+			.check label input:checked+p,footer label input:checked+p{
+				background-position:-73px -12px;
+				border:1px solid transparent;
+			}
+			.check{
+				position: relative;
+				display: flex;
+				align-items: center;
+			}
+			
+			.product img{
+				width:1.4rem;
+				height:1.4rem;
+				border-radius: 10px;
+				float: left;
+				margin-right:0.1rem;
+			}
+			.product{
+				width:4.5rem;
+				
+			}
+			.detail{
+				padding:0.2rem 0;
+			}
+			.detail h3{
+				height:0.4rem;
+				line-height: 0.2rem;
+				overflow: hidden;
+			}
+			.detail>div{
+				display:flex;
+				justify-content: space-between;
+			}
+			.detail .price{
+				color:#E43130;
+				font-size:0.2rem;
+				font-weight: bold;
+			}
+			.detail .price span{
+				font-size:0.16rem;
+			}
+			.control button{
+				border:0;
+				background:transparent;
+				font-weight: bold;
+				width:0.2rem;
+				height:0.2rem;
+				
+			}
+			.control input{
+				width:0.5rem;
+				text-align: center;
+				height: 0.2rem;
+				border:0;
+				background: #f7f7f7;
+			}
+			.del{
+				border:0;
+				background:transparent;
+				float: right;
+			}
+			
+			footer{
+				height:0.5rem;
+				position: fixed;
+				width:100%;
+				bottom:0;
+				left:0;
+				background: #fff;
+				border-top:1px solid #d3d3d3;
+				display:flex;
+				padding:0 0.15rem;
+				justify-content: space-between;
+				align-items: center;
+				box-sizing: border-box;
+			}
+			.calc-price{
+				font-size:0.2rem;
+				font-weight: bold;
+			}
+			.checkall{
+				display: flex;
+				align-items:center;
+			}
+		</style>
+	</head>
+	<body>
+		<main></main>
+		<footer>
+			<div class="checkall">
+				<label>
+					<input type="checkbox" checked/>
+					<p></p>
+				</label>
+				<span>全选</span>
+			</div>
+			<div class="calc-price">
+				<div>
+					总价
+					<span class="total-price">￥9999</span>
+				</div>
+			</div>
+		</footer>
+	</body>
+	<script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/zepto.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+			$.ajax({
+				url:"date/index.json",
+				type:"get",
+				success:function(d){
+					$.each(d.wrap.title,function(i,obj){
+						if(localStorage.getItem("id"+obj.pid)){
+							var num=localStorage.getItem("id"+obj.pid+"num")
+							$("main").append(`<div class="product-item" data-pid=${obj.pid}>
+				<div class="check">
+					<label>
+						<input type="checkbox" checked class="yy"/>
+						<p></p>
+					</label>
+				</div>
+				<div class="product">
+					<img src="${obj.imgSrc}"/>
+					<div class="detail">
+						<h3>${obj.title}</h3>
+						<div>
+							<p class="price"><span>￥</span>${obj.jia}</p>
+							<div class="control">
+								<button class="minus">-</button>
+								<input type="text" value="${num}"  class="inp"/>
+								<button class="add">+</button>
+							</div>
+						</div>
+					</div>
+					<button class="del">删除</button>
+				</div>
+				
+			</div>`)
+						}
+					})
+				}
+			})
+			$("main").on("touchstart",".add",function(){
+				var val=$(this).prev().val()
+				val++
+				var pid=$(this).parents(".product-item").attr("data-pid")
+				localStorage.setItem("id"+pid+"num",val)
+				$(this).prev().val(val)
+				cal()
+			})
+			$("main").on("touchstart",".minus",function(){
+				var val=$(this).next().val()
+				val--
+				if(val<=1){
+					val=1
+				}
+				var pid=$(this).parents(".product-item").attr("data-pid")
+				localStorage.setItem("id"+pid+"num",val)
+				val=$(this).next().val(val)
+				cal()
+			})
+			$("main").on("touchstart",".del",function(){
+				var pid=$(this).parents(".product-item").attr("data-pid")
+				localStorage.removeItem("id"+pid+"num")
+				localStorage.removeItem("id"+pid)
+				$(this).parents(".product-item").remove()
+				cal()
+				
+			})
+			//全选
+			$("footer").on("change","input",function(){
+				$(".check input").prop("checked",$("footer input").prop("checked"))
+				cal()
+			})
+			//反选
+			$("main").on("change",".yy",function(){
+				var len=$(".yy").length
+				var lin=$(".yy:checked").length
+				if(len==lin){
+					$("footer input").prop("checked",true)
+				}else {
+					$("footer input").prop("checked",false)
+				}
+				cal()
+			})
+			//总价
+			//遍历选中的input
+			
+			cal()
+			function cal(){
+				//计算总价
+				var totalPrice=0 //总价
+				$(".check input:checked").each(function(index,item){
+					console.log(index)
+					var checkbox=$(".check input:checked").eq(index)
+					console.log(checkbox)
+					var num=checkbox.parents(".product-item").find(".control input").val()
+					var price=checkbox.parents(".product-item").find(".price").text().substr(1)
+					totalPrice+=num*price
+					console.log(totalPrice)
+				})
+				$(".total-price").text("￥"+totalPrice)
+			}
+		})
+	</script>
+</html>

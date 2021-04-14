@@ -1,0 +1,117 @@
+{
+	
+	"banner":[
+		{
+		"album":["img/banner1.png","img/banner2.png","img/banner3.png","img/banner4.png","img/banner5.png","img/banner6.png","img/banner7.png","img/banner8.png","img/banner9.png","img/banner10.png","img/banner11.png","img/banner12.png","img/banner13.png"]
+		}
+	],
+	"list":{
+		"li":[
+			{
+				"img":"img/1-1.png",
+				"money":"399",
+				"nei":"联想K歌麦克风 UM11 红色"
+			},
+			{
+				"img":"img/1-2.png",
+				"money":"9.9",
+				"nei":"英菲克inphic电竞游戏鼠标垫脑电笔记本桌垫PD3070 小号 黑色"
+			},
+			{
+				"img":"img/1-3.png",
+				"money":"9499",
+				"nei":"ThinkPad P14s 英特尔酷睿i5 笔记本电脑20S4A000CD"
+			},
+			{
+				"img":"img/1-4.png",
+				"money":"5599",
+				"nei":"2020款 小新 Pro 13 13.3英寸全面屏轻薄笔记本电脑 深空灰"
+			},
+			{
+				"img":"img/1-5.png",
+				"money":"399",
+				"nei":"拯救者电竞手机 Pro 12GB+256GB 炽焰战甲"
+			},
+			{
+				"img":"img/1-6.png",
+				"money":"399",
+				"nei":"拯救者 R7000 2020款 15.6英寸游戏笔记本 幻影黑"
+			}
+		]
+	},
+	"wrap":{
+		"title":[
+			{
+				"imgSrc":"img/1-1.png",
+				"title":"thinkplus 都市流行双肩包 玄武黑",
+				"jia":"199",
+				"lun":["img/1-1.png","img/1-2.png","img/1-3.png","img/1-4.png","img/1-5.png"],
+				"pid":"1"
+			},
+			{
+				"imgSrc":"img/1-2.png",
+				"title":"ThinkPad 小黑双模鼠标 午夜黑",
+				"jia":"99",
+				"lun":["img/1-10.png","img/1-2.png","img/1-3.png","img/1-4.png","img/1-5.png"],
+				"pid":"2"
+			},
+			{
+				"imgSrc":"img/1-3.png",
+				"title":"thinkplus 口红电源mini USB-C 迷你适配器 45W 黑",
+				"jia":"129",
+				"lun":["img/1-9.png","img/1-2.png","img/1-3.png","img/1-4.png","img/1-5.png"],
+				"pid":"3"
+			},
+			{
+				"imgSrc":"img/1-4.png",
+				"title":"2020款 小新 Pro 13 13.3英寸全面屏轻薄笔记本电脑 深空灰",
+				"jia":"5499",
+				"lun":["img/1-8.png","img/1-2.png","img/1-3.png","img/1-4.png","img/1-5.png"],
+				"pid":"4"
+			},
+			{
+				"imgSrc":"img/1-5.png",
+				"title":"拯救者铝合金散热支架 Z2 陨石灰",
+				"jia":"149",
+				"lun":["img/1-7.png","img/1-2.png","img/1-3.png","img/1-4.png","img/1-5.png"],
+				"pid":"5"
+			},
+			{
+				"imgSrc":"img/1-6.png",
+				"title":"拯救者 Y7000 2020 英特尔酷睿i7 15.6英寸游戏笔记本 幻影黑",
+				"jia":"7699",
+				"lun":["img/1-6.png","img/1-2.png","img/1-3.png","img/1-4.png","img/1-5.png"],
+				"pid":"6"
+			},
+			{
+				"imgSrc":"img/1-7.png",
+				"title":"联想平板M8 网课pad 8英寸 4G+64G 学生护眼平板电脑 WiFi版",
+				"jia":"9319",
+				"lun":["img/1-5.png","img/1-2.png","img/1-3.png","img/1-4.png","img/1-5.png"],
+				"pid":"7"
+			},
+			{
+				"imgSrc":"img/1-8.png",
+				"title":"联想小新智能键盘R1",
+				"jia":"9931",
+				"lun":["img/1-4.png","img/1-2.png","img/1-3.png","img/1-4.png","img/1-5.png"],
+				"pid":"8"
+			},
+			{
+				"imgSrc":"img/1-9.png",
+				"title":"YOGA 65W电源适配器 凝脂白",
+				"jia":"9239",
+				"lun":["img/1-3.png","img/1-2.png","img/1-3.png","img/1-4.png","img/1-5.png"],
+				"pid":"9"
+			},
+			{
+				"imgSrc":"img/1-10.png",
+				"title":"ThinkPad 小黑双模鼠标 午夜黑",
+				"jia":"9921",
+				"lun":["img/1-2.png","img/1-2.png","img/1-3.png","img/1-4.png","img/1-5.png"],
+				"pid":"10"
+			}
+		]
+	}
+	
+}

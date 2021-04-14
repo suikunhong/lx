@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" href="css/reset.css">
+		<style>
+			body {
+				font-size:.16rem;
+				background:#fff;
+			}
+			header {
+				width:100%;
+				height:40px;
+				background:#fff;
+				position: fixed;
+				top:0;
+				left:0;
+				z-index:1;
+				display: flex;
+				justify-content: space-between;
+			}
+			.speed-low {
+				width:100%;
+				height:40px;
+				background:#fff;
+				position: absolute;
+				opacity: 1;
+				top:0;
+				left:0;
+				z-index:1;
+			}
+			header .left,header .right {
+				width: 44px;
+				height:40px;
+				display:flex;
+				justify-content: center;
+				align-items: center;
+				position: relative;
+			}
+			header .left span,header .right span {
+				position: absolute;
+				width:24px;
+				height:24px;
+			}
+			header .left span img,header .right span img {
+				width: 100%;
+				height: 100%;
+			}
+			header .left .left-1,header .right .right-1{
+				z-index:1;
+			}
+			header .left .left-2,header .right .right-2 {
+				display:none;
+			}
+			header .category {
+				position: relative;
+				line-height:40px;
+				display:none;
+			}
+			header .category span {
+				display: inline-block;
+				height: 35px;
+			}
+			main {
+				margin-top:40px;
+				height: 999px;
+			}
+			.banner {
+				width:6.4rem;
+				height: 5.63rem;
+				position: relative;
+				overflow: hidden;
+			}
+			.banner-list {
+				width:9999px;
+			}
+			.banner-list li {
+				float:left;
+				width:6.4rem;
+				height: 5.63rem;
+			}
+			.banner-list li img {
+				width: 100%;
+				height: 100%;
+			}
+			.num {
+				position: absolute;
+				right:.10rem;
+				bottom:.20rem;
+			}
+			.num span {
+				font-size:.2rem;
+			}
+			.cxy-wrap {
+				display:flex;
+				justify-content: space-around;
+				margin:.1rem 0;
+			}
+			.cxy-wrap .p1 {
+				color:red;
+			}
+			.mall-price-span{
+				color:red;
+			}
+			.head_money_sing {
+				color:red;
+				font-size:.2rem;
+				font-weight:bold;
+			}
+			h5 {margin:.1rem 0;}
+			.choise-data {
+				height:.62rem;
+				display:flex;
+				padding:0 .2rem;
+				justify-content: space-between;
+				align-items: center;
+			}
+			.choise-data button {
+				display:inline-block;
+				border:0;
+				outline:none;
+				background:#ccc;
+				width:.3rem;
+				height: .3rem;
+			}
+			.choise-data .inp {
+				display:inline-block;
+				width:.4rem;
+				height: .3rem;
+				text-align:center;
+				background:#ccc;
+				border:0;
+				outline:0;
+			} 
+			.detail-btn-group{
+				position: fixed;
+				width: 100%;
+				left:0;
+				bottom:0;
+				display:flex;
+				justify-content: space-between;
+				align-items: center;
+				height:.5rem;
+				background:#fff;
+			}
+			.detail-btn-group-list {
+				width:60%;
+				display:flex;
+				justify-content: space-around;
+				align-items: center;
+			}
+			.detail-btn-group-list li {
+				width: 30%;
+				height:.5rem;
+				display:flex;
+				justify-content: center;
+				align-items: center;
+				flex-wrap: wrap;
+			}
+			.detail-btn-group-list li .span {
+				display: inline-block;
+				width: .24rem;
+				height: .24rem;
+			}
+			.detail-btn-group-list li .spanq {
+				display: inline-block;
+				width: 100%;
+				text-align:center;
+				height: 100%;
+			}
+			.detail-btn-group-list li .span img {
+				width: 100%;
+				height: 100%;
+			}
+			.wrap {
+				width:40%;
+			}
+			.wrap button {
+				width:1.25rem;
+				display:inline-block;
+				border:0;
+				height:.5rem;
+				color:#fff;
+				float:left;
+				outline:0;
+			}
+			.wrap .btn1{
+				background:#2A2A2A;
+			}
+			.wrap .btn2 {
+				background:#F4364C;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<div class="speed-low"></div>
+			<div class="left">
+				<span class="left-1"><img src="img/left-1.png" alt=""></span>
+				<span class="left-2"><img src="img/left-2.png" alt=""></span>
+			</div>
+			<div class="category">
+				<span style="border-bottom:3px solid #E43130">商品</span>
+				<span>详情</span>
+				<span>评价</span>
+			</div>
+			<div class="right">
+				<span class="right-1"><img src="img/right-1.png" alt=""></span>
+				<span class="right-2"><img src="img/right-2.png" alt=""></span>
+			</div>
+		</header>
+		<main>
+			<section class="banner-wrap"></section>	
+		</main>
+		<footer>
+			<div class="detail-btn-group">
+				<ul class="detail-btn-group-list">
+					<li>
+						<span class="span1 span">
+							<img src="img/kefu.png" alt="">
+						</span>
+						<span class="spanq">客服</span>
+					</li>
+					<li>
+						<span class="span2 span">
+							<img src="img/xinxin.png" alt="">
+						</span>
+						<span class="spanq">收藏</span>
+					</li>
+					<li>
+						<span class="span3 span">
+							<img src="img/gouw.png" alt="">
+						</span>
+						<span class="spanq">购物车</span>
+					</li>
+				</ul>
+				<div class="wrap">
+					<button class="btn2" >加入购物车</button>
+				
+					<a href="shoppingCar.html">
+						<button class="btn1">立即购买</button>
+					</a>
+				</div>
+			</div>
+		</footer>
+	</body>
+	<script src="js/zepto.min.js"></script>
+	<script src="js/rem.js"></script>
+	<script>
+		//头部
+		$(function(){
+			$(window).scroll(function(){
+				x=$(this).scrollTop()
+				if(x>0){
+					$(".speed-low").css({opacity:0.3})
+					$(".category").css({display:"block"})
+					$(".left-2").css({display:"block"})
+					$(".left-1").css({display:"none"})
+					$(".right-2").css({display:"block"})
+					$(".right-1").css({display:"none"})
+				}else {
+					$(".speed-low").css({opacity:0})
+					$(".category").css({display:"none"})
+					$(".left-2").css({display:"none"})
+					$(".left-1").css({display:"block"})
+					$(".right-2").css({display:"block"})
+					$(".right-1").css({display:"none"})
+				}
+				
+			})
+		})
+		//轮播图
+		$(function(){
+			var search=location.search //查询字符串
+			var pid=search.split("=")[1] 
+			$.ajax({
+				url:"date/index.json",
+				type:"get",
+				success:function(d){
+					$.each(d.wrap.title,function(i,obj){
+						
+						if(obj.pid==pid){
+							var str=""
+							$.each(obj.lun,function(index,item){
+								str+=`<li><img src="${item}" alt=""></li>`
+							})
+							$(".banner-wrap").append(`<div class="banner">
+									<ul class="banner-list">
+										${str}
+									</ul>
+									<div class="num">
+										<span class="current-index">1</span><span>/</span><span>${obj.lun.length}</span>
+									</div>	
+								</div>
+								<div class="pd_good_price">
+					<span class="mall-price-span">商城价</span>
+					<span class="head_money_sing">￥${obj.jia}</span>
+				</div>
+				<h5>${obj.title}</h5>
+				<div class="cxy-wrap">
+					<p>活动</p>
+					<div>
+						<p class="p1">【6期免息】今日购买此产品享京东白条&蚂蚁花呗6期分期免息</p>
+						<p class="p1">【企业注册有礼】注册&升级成为企业用户立享800元优惠券。点击前往</p>
+					</div>
+				</div>
+				<section class="choise-data" data-pid=${obj.pid}>
+				<span>数量</span>
+				<div class="shu" >
+					<button class="next">-</button>
+					<input type="text" name="" id="" class="inp" value="${localStorage.getItem("id"+obj.pid+"num")||1}">
+					<button class="add">+</button>
+				</div>
+			</section>`)
+								
+							
+						}
+					})
+						//轮播图
+						var index=0;
+						var start,w
+						var len=$(".banner-list li").length
+						//console.log(len)
+						$(".banner-wrap").on("touchstart",function(e){
+							start=e.touches[0].pageX	
+						})
+						$(".banner-wrap").on("touchend",function(e){
+							end=e.changedTouches[0].pageX	
+							if(start-end>100){
+								index++
+								if(index>len-1){
+									index=len-1
+								}
+							}else if(start-end<-100){
+								index--
+								if(index<0){
+									index=0
+								}
+							}
+							$(".banner-list").animate({
+								transform:"translateX("+-index*6.4+"rem)"
+							})
+							$(".current-index").text(index+1)
+						})
+					}
+				
+				})
+				//本地存储
+				$(".btn2").on("touchstart",function(){
+					var l=localStorage
+					l.setItem("id"+pid,pid)
+					if(l.getItem("id"+pid+"num")){	
+						var num=l.getItem("id"+pid+"num")
+						l.setItem("id"+pid+"num",num)
+					}else{
+						l.setItem("id"+pid+"num",1)
+					}
+				})
+				
+				//加加减减
+				$("main").on("touchstart",".add",function(){
+					var val=$(this).prev().val()
+					val++
+					$(this).prev().val(val)
+					localStorage.setItem("id"+pid+"num",val)
+				})
+				$("main").on("touchstart",".next",function(){
+					var val=$(this).next().val()
+					//console.log(val)
+					val--
+					if(val<=1){
+						val=1
+					}
+					$(this).next().val(val)
+					localStorage.setItem("id"+pid+"num",val)
+					
+				})
+				
+		})
+		
+		
+		
+	</script>
+</html>
